@@ -17,18 +17,18 @@ class Pawn
     @valid = []
 
     direction = self.color == 'white' ? -1 : 1
-    start_row = self.color == 'white' ? 6 : 1
+    start_pos = self.color == 'white' ? 6 : 1
 
     one_step = [startrow + direction, startcol]
     two_step = [startrow + (2 * direction), startcol]
     diag_left_step = [startrow + direction, startcol - 1]
-    diag_right_step = [startrow + direction, startcol - 1]
+    diag_right_step = [startrow + direction, startcol + 1]
     # If it is a pawns first move
     if board.grid[one_step[0]][one_step[1]].is_a?(String)
       @valid.push(one_step)
     end
 
-    if board.grid[two_step[0]][two_step[1]].is_a?(String)
+    if board.grid[two_step[0]][two_step[1]].is_a?(String) && startrow == start_pos
       @valid.push(two_step)
     end
 
