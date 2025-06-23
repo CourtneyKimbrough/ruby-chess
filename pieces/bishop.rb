@@ -1,11 +1,10 @@
 class Bishop
-  attr_accessor :position, :symbol
+  attr_accessor :symbol
   attr_reader :color
 
-  def initialize(position, color)
-    @position = position
+  def initialize(color)
     @color = color
-    if @color == 'white'
+    if @color == 'black'
       @symbol = "\u2657"
     else
       @symbol = "\u265D"
