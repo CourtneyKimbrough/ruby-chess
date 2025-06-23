@@ -1,5 +1,7 @@
 
 require_relative 'board'
+require_relative 'piece'
+
 
 class Play
   attr_accessor :board, :turn, :finished
@@ -64,7 +66,7 @@ class Play
   end
 end
 
-puts "Welcome to command line chess!"
+puts "Welcome to command line chess!\n\n"
 my_game = Play.new
 my_game.board.display
 while !my_game.finished

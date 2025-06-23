@@ -1,17 +1,5 @@
-class Knight
-  attr_accessor :symbol
-  attr_reader :color
+require_relative '../piece'
 
-  def initialize(color)
-    @color = color
-    if @color == 'black'
-      @symbol = "\u2658"
-    else
-      @symbol = "\u265E"
-    end
-  end
+class Knight < Piece
 
-  def moves
-    
-  end
 end

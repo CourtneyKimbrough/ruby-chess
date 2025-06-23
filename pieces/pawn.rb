@@ -1,17 +1,6 @@
-require_relative '../board'
+require_relative '../piece'
 
-class Pawn
-  attr_accessor :symbol
-  attr_reader :color
-
-  def initialize(color)
-    @color = color
-    if @color == 'black'
-      @symbol = "\u2659"
-    else
-      @symbol = "\u265F"
-    end
-  end
+class Pawn < Piece
 
   def valid_moves(startrow, startcol, board)
     @valid = []
@@ -39,6 +28,8 @@ class Pawn
     if !board.grid[diag_right_step[0]][diag_right_step[1]].is_a?(String)
       @valid.push(diag_right_step)
     end
+
+    @valid = filter_friendly_moves(@valid, board)
 
     return @valid
   

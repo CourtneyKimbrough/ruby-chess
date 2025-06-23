@@ -1,4 +1,6 @@
-class Queen
+require_relative '../piece'
+
+class Queen < Piece
   attr_accessor :symbol
   attr_reader :color
 

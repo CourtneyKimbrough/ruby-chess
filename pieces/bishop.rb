@@ -1,18 +1,6 @@
-class Bishop
-  attr_accessor :symbol
-  attr_reader :color
+require_relative '../piece'
 
-  def initialize(color)
-    @color = color
-    if @color == 'black'
-      @symbol = "\u2657"
-    else
-      @symbol = "\u265D"
-    end
-  end
-
-  def moves
-    
-  end
+class Bishop < Piece
+  
 end
 
